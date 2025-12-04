@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami - Ragil 69 Tour Travel</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #f1f1f1;
+    }.navbar {
+  background: #1a1a1a;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px #000;
+  position: relative;
+}
+.navbar .logo img {
+  height: 40px;
+}
+.menu-toggle {
+  font-size: 28px;
+  color: #f9d976;
+  cursor: pointer;
+  display: none;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: #f9d976;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #f9d976;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1f1f1f;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  animation: fadeIn 1s ease forwards;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(249, 217, 118, 0.1);
+}
+
+.card-bawah {
+  background: #1a1a1a;
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(249, 217, 118, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #f9d976;
+  text-shadow: 0 0 10px #f9d976;
+  margin-bottom: 30px;
+}
+
+.card p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+ul.keunggulan {
+  list-style: square;
+  padding-left: 20px;
+  color: #f1f1f1;
+}
+ul.keunggulan li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+footer {
+  background: #1f1f1f;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 5px #000;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="main-content">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/image/logo.png" alt="Logo Ragil 69">
+      </div>
+      <div class="menu-toggle" id="hamburger"><span></span></div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="pesan.html">Pesan Travel</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+  </nav>  <!-- Konten Tentang Kami -->  <section class="section">
+    <div class="card">
+      <h1>Tentang Ragil 69 Tour Travel</h1>
+      <p>
+        Ragil 69 Tour Travel adalah layanan transportasi profesional yang melayani berbagai kebutuhan perjalanan dari wilayah Jawa ke Bali dan sebaliknya.
+        Kami hadir untuk memberikan pengalaman perjalanan yang nyaman, aman, dan tepat waktu dengan pelayanan terbaik dari tim kami yang berpengalaman.
+      </p>
+      <p>
+        Dengan berbagai pilihan kendaraan, fasilitas lengkap, dan harga yang kompetitif, kami siap menjadi pilihan utama Anda dalam melakukan perjalanan wisata,
+        mudik, study tour, hingga drop bandara.
+      </p>
+      </div>
+      <div class="card-bawah">
+      <h2 style="color:#f9d976">Kenapa Memilih Kami?</h2>
+  <ul class="keunggulan">
+    <li>Driver berpengalaman & ramah</li>
+    <li>Kendaraan bersih, terawat, dan AC dingin</li>
+    <li>Harga terjangkau tanpa mengurangi kualitas</li>
+    <li>Pilihan rute fleksibel Jawa - Bali</li>
+    <li>Proses pemesanan mudah lewat WhatsApp</li>
+  </ul>
+</div>
+  </section> 
+  <!-- Footer --> 
+  <footer>
+    &copy; 2025 Ragil 69 Tour Travel. Semua hak dilindungi.
+  </footer> 
+  <script src="script.js"></script>
+  </body>
+</html>

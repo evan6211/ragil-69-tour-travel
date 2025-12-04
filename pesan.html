@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Sekarang - Ragil 69</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+  line-height: 1.6;
+  padding-bottom: 100px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeInSlide 1s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #f9d976;
+  text-shadow: 0 0 10px #f9d976;
+}
+
+form {
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #000;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.kursi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-items: center;
+}
+
+.kursi input[type="checkbox"] {
+  display: none;
+}
+
+.kursi label {
+  width: 45px;
+  height: 45px;
+  background: #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ccc;
+  transition: 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 5px #000;
+}
+
+.kursi input[type="checkbox"]:checked + label {
+  background-color: #f9d976;
+  color: #000;
+  box-shadow: 0 0 10px #f9d976;
+}
+
+button {
+  background-color: #f9d976;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  color: #000;
+  box-shadow: 0 0 10px #f9d976;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #fff27b;
+}
+
+footer {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #f1f1f1;
+  box-shadow: 0 -2px 5px #000;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="main-content">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/image/logo.png" alt="Logo Ragil 69">
+      </div>
+      <div class="menu-toggle" id="hamburger"><span></span></div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="pesan.html">Pesan Travel</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>  
+  <!-- Konten --> 
+  <div class="container">
+    <h2>Pesan Sekarang</h2>
+    <form id="form-pesan">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" required /><label for="tujuan">Tujuan</label>
+  <input type="text" id="tujuan" required />
+
+  <label for="lokasi">Lokasi Penjemputan</label>
+  <input type="text" id="lokasi" required />
+
+  <label for="tanggal">Tanggal</label>
+  <input type="date" id="tanggal" required />
+
+  <label>Pilih Kursi</label>
+  <div class="kursi" id="daftar-kursi"></div>
+
+  <button type="submit">Pesan Sekarang</button>
+</form>
+
+  </div>  <!-- Footer -->  <footer>
+    &copy; 2025 Ragil 69 Tour Travel. Semua hak dilindungi.
+  </footer>  <!-- Script -->  <script>
+    // Buat daftar kursi secara dinamis
+    const container = document.getElementById("daftar-kursi");
+    for (let i = 1; i <= 16; i++) {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <input type="checkbox" id="kursi${i}" name="kursi" value="Kursi ${i}" />
+        <label for="kursi${i}">${i}</label>
+      `;
+      container.appendChild(div);
+    }
+
+    document.getElementById("form-pesan").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const tujuan = document.getElementById("tujuan").value;
+      const lokasi = document.getElementById("lokasi").value;
+      const tanggal = document.getElementById("tanggal").value;
+      const kursi = Array.from(document.querySelectorAll('input[name="kursi"]:checked'))
+        .map(el => el.value)
+        .join(', ');
+
+      const pesan = `Halo, saya ingin memesan travel:\n\nNama: ${nama}\nTujuan: ${tujuan}\nLokasi Penjemputan: ${lokasi}\nTanggal: ${tanggal}\nKursi: ${kursi}`;
+
+      const noWA = "6285790342089"; // Ganti dengan nomor WA
+      const urlWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
+      window.open(urlWA, '_blank');
+    });
+  </script> 
+  <script src="script.js"></script>
+  </body>
+</html>

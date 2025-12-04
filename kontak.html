@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - Ragil 69 Tour Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f1f1f1;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+  .navbar {
+  background: #1a1a1a;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px #000;
+}
+.navbar .logo img {
+  height: 40px;
+}
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #f9d976;
+  cursor: pointer;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  color: #f9d976;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-links li a:hover {
+  color: #f9d976;
+}
+
+/* Tampilan desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Tampilan mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1a1a1a;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+  animation: fadeInSlide 1s ease-out;
+}
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+h2 {
+  text-align: center;
+  color: #f9d976;
+  margin-bottom: 10px;
+}
+p.desc {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+}
+form button {
+  background-color: #f9d976;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  color: #000;
+  box-shadow: 0 0 10px #f9d976;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background-color: #fff27b;
+}
+
+.sosmed {
+  text-align: center;
+  margin-top: 40px;
+}
+.sosmed a {
+  margin: 0 10px;
+  display: inline-block;
+}
+.sosmed img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(1.2);
+  transition: transform 0.3s;
+}
+.sosmed img:hover {
+  transform: scale(1.2);
+}
+
+.vcard-maps {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.1);
+}
+.vcard-maps h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #f9d976;
+}
+.vcard-maps iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+footer {
+  background: #1f1f1f;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 5px #000;
+}
+
+  </style>
+</head>
+<body>
+  <!-- navbar -->
+ <div id="main-content">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/image/logo.png" alt="Logo Ragil 69">
+      </div>
+      <div class="menu-toggle" id="hamburger"><span></span></div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="pesan.html">Pesan Travel</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>  
+  <!-- nav-end -->
+   <div class="container">
+    <h2>Hubungi Kami</h2>
+    <p class="desc">Silakan hubungi kami jika ada pertanyaan, pemesanan, atau kerja sama.</p><form id="kontak-form">
+  <label for="nama">Nama Lengkap</label>
+  <input type="text" id="nama" required>
+
+  <label for="email">Email / Nomor HP</label>
+  <input type="text" id="email" required>
+
+  <label for="pesan">Pesan Anda</label>
+  <textarea id="pesan" rows="5" required></textarea>
+
+  <button type="submit">Kirim Pesan</button>
+</form>
+
+<div class="sosmed">
+  <a href="#"><img src="assets/image/Facebook.png" alt="Facebook"></a>
+  <a href="#"><img src="assets/image/Instagram.png" alt="Instagram"></a>
+  <a href="#"><img src="assets/image/tik-tok.png" alt="TikTok"></a>
+</div>
+
+  </div>  <div class="vcard-maps">
+    <h3>Alamat Kami</h3>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1MWW1Iu5EI1FYHj0GpzeBrEqR-QP7a8o&ehbc=2E312F"
+    width="640" 
+    style="border:0"
+    height="480"
+    loading="lazy"
+    allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>  <footer>
+    &copy; 2025 Ragil 69 Tour Travel. Semua hak dilindungi.
+  </footer>  
+  <script>
+    // Kirim ke WhatsApp
+    document.getElementById("kontak-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const pesan = document.getElementById("pesan").value;
+      const noWA = "085790342089"; // Ganti dengan nomor WhatsApp
+
+      const text = `Halo, saya ${nama}\nKontak: ${email}\nPesan: ${pesan}`;
+      const url = `https://wa.me/${noWA}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+  <script src="script.js"></script>
+  </body>
+</html>
